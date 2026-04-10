@@ -224,24 +224,66 @@ section {
   pointer-events: none;
 }
 
-/* Cursor-following glow effect */
-.cursor-glow {
+/* ── Modern Cursor Spotlight ── */
+.cursor-spotlight {
   position: fixed;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 102, 68, 0.15), transparent);
+  pointer-events: none;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+
+
+
+/* Inner sharp ring */
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 1;
-  filter: blur(60px);
-  top: -150px;
-  left: -150px;
+  z-index: 9999;
+  border: 1.5px solid hsla(180, 100%, 65%, 0.7);
+  box-shadow:
+    0 0 10px hsla(180, 100%, 65%, 0.4),
+    inset 0 0 6px hsla(180, 100%, 65%, 0.15);
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  transition: transform 0.04s linear, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  backdrop-filter: blur(1px);
+}
+
+/* Dot at cursor center */
+.cursor-dot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  background: hsl(180, 100%, 75%);
+  box-shadow: 0 0 8px 2px hsla(180, 100%, 70%, 0.8);
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  transition: transform 0.02s linear;
+}
+
+/* Expand ring on hover over interactive elements */
+.cursor-ring.expanded {
+  width: 56px;
+  height: 56px;
+  border-color: hsla(250, 84%, 70%, 0.6);
+  box-shadow:
+    0 0 18px hsla(250, 84%, 70%, 0.3),
+    inset 0 0 8px hsla(250, 84%, 70%, 0.1);
 }
 
 @media (max-width: 768px) {
-  .cursor-glow {
-    display: none;
-  }
+  .cursor-ring, .cursor-dot, .cursor-halo { display: none; }
 }
 
 /* Responsive Overrides */

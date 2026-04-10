@@ -11,16 +11,6 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   useEffect(() => {
     const handleType = () => {
@@ -47,15 +37,7 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* Cursor-following glow */}
-      <motion.div
-        className="cursor-glow"
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y
-        }}
-        transition={{ type: 'spring', damping: 10, mass: 0.1 }}
-      />
+      {/* Content */}
 
       <div className="container">
         <div className="hero-container">
@@ -65,7 +47,7 @@ export default function Hero() {
               <span>Welcome to my portfolio</span>
             </div>
 
-            <h1 className="hero-name">Himanshu Gurjar</h1>
+            <h1 className="hero-name">I'm Himanshu Gurjar</h1>
 
             <div className="hero-role">
               <span className="role-prefix">&lt;</span>

@@ -8,6 +8,8 @@ import Projects from './components/Projects'
 import Education from './components/Education'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
+import NetworkBackground from './components/NetworkBackground'
+import CursorSpotlight from './components/CursorSpotlight'
 
 function PortfolioHome() {
   return (
@@ -26,6 +28,8 @@ function PortfolioHome() {
 function App() {
   return (
     <Router>
+      <CursorSpotlight />
+      <NetworkBackground />
       <Navbar />
       <Routes>
         <Route path="/" element={<PortfolioHome />} />
