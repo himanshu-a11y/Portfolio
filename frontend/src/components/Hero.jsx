@@ -11,6 +11,16 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   useEffect(() => {
     const handleType = () => {
@@ -35,107 +45,71 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [displayText, isDeleting, roleIndex, typingSpeed])
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
-  }
-
-  const handleDownload = (format) => {
-    window.location.href = `/api/download/cv/${format}`
-  }
-
   return (
-    <section id="hero" className="hero">
-      {/* Background Elements */}
-      <div className="hero-visual-bg">
-        <div className="orb-1" />
-        <div className="orb-2" />
-        <div className="hero-grid" />
-      </div>
+    <section className="hero">
+      {/* Cursor-following glow */}
+      <motion.div
+        className="cursor-glow"
+        animate={{
+          x: mousePosition.x,
+          y: mousePosition.y
+        }}
+        transition={{ type: 'spring', damping: 10, mass: 0.1 }}
+      />
 
-      <div className="container hero-container">
-        <motion.div 
-          className="hero-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div className="hero-badge" variants={itemVariants}>
-            <span className="badge-dot" />
-            Empowering the Digital Future
-          </motion.div>
-
-          <motion.h1 className="hero-name" variants={itemVariants}>
-            Hi, I&apos;m <span className="gradient-text">Himanshu</span>
-            <br />
-            <span className="gradient-text">Gurjar</span>
-          </motion.h1>
-
-          <motion.div className="hero-role" variants={itemVariants}>
-            <span className="role-prefix">{'< '}</span>
-            <span className="typed-text">{displayText}</span>
-            <span className="cursor" />
-            <span className="role-suffix">{' />'}</span>
-          </motion.div>
-
-          <motion.p className="hero-desc" variants={itemVariants}>
-            A passionate Full-Stack developer focused on building secure, scalable, and modern web applications with MERN stack and a keen interest in Cybersecurity.
-          </motion.p>
-
-          <motion.div className="hero-actions" variants={itemVariants}>
-            <div className="download-group">
-              <button onClick={() => handleDownload('pdf')} className="btn btn-primary" aria-label="Download CV as PDF">
-                <Download size={18} /> CV (PDF)
-              </button>
-              <button onClick={() => handleDownload('docx')} className="btn btn-outline" aria-label="Download CV as DOCX">
-                Word
-              </button>
+      <div className="container">
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <div className="badge-dot"></div>
+              <span>Welcome to my portfolio</span>
             </div>
-            <a href="#contact" className="btn btn-outline">
-              <Mail size={18} /> Contact Me
-            </a>
-          </motion.div>
 
-          <motion.div className="hero-socials" variants={itemVariants}>
-            <a href="https://github.com/himanshu-a11y" target="_blank" rel="noreferrer" className="social-link" aria-label="GitHub"><Github size={20} /></a>
-            <a href="https://www.linkedin.com/in/himanshu-gurjar-02ab172aa/" target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn"><Linkedin size={20} /></a>
-            <a href="mailto:harsanahimanshu21@gmail.com" className="social-link" aria-label="Email"><Mail size={20} /></a>
-          </motion.div>
-        </motion.div>
+            <h1 className="hero-name">Himanshu Gurjar</h1>
 
-        <motion.div 
-          className="hero-visual"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div className="avatar-container">
-            <div className="avatar-ring" />
-            <div className="avatar-glow" />
-            <div className="avatar-main">
-              <span>HG</span>
+            <div className="hero-role">
+              <span className="role-prefix">&lt;</span>
+              <span className="typed-text">{displayText}</span>
+              <span className="cursor">|</span>
+              <span className="role-suffix">/&gt;</span>
             </div>
-            
-            {/* Tech Badges */}
-            <div className="floating-badge badge-react">
-              <Terminal size={16} /> React Specialist
+
+            <p className="hero-desc">
+              Full-stack developer passionate about building secure, scalable web applications and cybersecurity solutions. Specializing in MERN stack and cloud technologies.
+            </p>
+
+            <div className="hero-actions">
+              <a href="#projects" className="btn btn-primary">
+                <Terminal size={18} />
+                View My Work
+              </a>
+              <a href="#contact" className="btn btn-secondary">
+                <Mail size={18} />
+                Get In Touch
+              </a>
             </div>
-            <div className="floating-badge badge-node">
-              <Shield size={16} /> Security Expert
+
+            <div className="hero-socials">
+              <a href="https://github.com" className="social-link" title="GitHub">
+                <Github size={24} />
+              </a>
+              <a href="https://linkedin.com" className="social-link" title="LinkedIn">
+                <Linkedin size={24} />
+              </a>
+              <a href="mailto:harsanahimanshu21@gmail.com" className="social-link" title="Email">
+                <Mail size={24} />
+              </a>
             </div>
           </div>
-        </motion.div>
+
+          <div className="hero-visual">
+            <div className="avatar-container">
+              <div className="avatar-ring"></div>
+              <div className="avatar-glow"></div>
+              <div className="avatar-main">HG</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

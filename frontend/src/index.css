@@ -177,6 +177,20 @@ section {
   transform: translateY(-2px);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: hsl(var(--text-primary));
+  border: 1px solid hsl(var(--accent-primary));
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+.btn-secondary:hover {
+  background: hsla(var(--accent-primary), 0.1);
+  border-color: hsl(var(--accent-primary));
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -10px hsla(var(--accent-primary), 0.4);
+}
+
 /* Glass Card */
 .glass-card {
   background: var(--bg-card);
@@ -208,6 +222,26 @@ section {
   z-index: -1;
   opacity: 0.15;
   pointer-events: none;
+}
+
+/* Cursor-following glow effect */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 102, 68, 0.15), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(60px);
+  top: -150px;
+  left: -150px;
+}
+
+@media (max-width: 768px) {
+  .cursor-glow {
+    display: none;
+  }
 }
 
 /* Responsive Overrides */
