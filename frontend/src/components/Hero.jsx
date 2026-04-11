@@ -47,7 +47,7 @@ export default function Hero() {
               <span>Welcome to my portfolio</span>
             </div>
 
-            <h1 className="hero-name">I'm Himanshu Gurjar</h1>
+            <h1 className="hero-name">Himanshu Gurjar</h1>
 
             <div className="hero-role">
               <span className="role-prefix">&lt;</span>
@@ -57,12 +57,11 @@ export default function Hero() {
             </div>
 
             <p className="hero-desc">
-              Full-stack developer passionate about building secure, scalable web applications and cybersecurity solutions. Specializing in MERN stack and cloud technologies.
+             Full-stack developer and cybersecurity enthusiast building secure, scalable applications. I code with precision and think like an attacker.
             </p>
 
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary">
-                <Terminal size={18} />
                 View My Work
               </a>
               <a href="#contact" className="btn btn-secondary">

@@ -79,11 +79,11 @@ export default function About() {
             </motion.h3>
             
             <motion.p className="about-bio" variants={itemVariants}>
-              Full-Stack Web Developer and Cybersecurity Enthusiast passionate about building secure, scalable, and modern web applications. Skilled in React, JavaScript, Python, and backend development with a strong focus on web security and penetration testing.
+              I am a Full-Stack Web Developer and Cybersecurity Enthusiast, passionate about engineering secure, scalable, and high-performance web applications. My technical expertise spans React, Node.js, Python, and robust backend development, with an unwavering focus on web security and penetration testing.
             </motion.p>
             
             <motion.p className="about-bio" variants={itemVariants}>
-              Beyond engineering, I am a lifelong learner, always exploring the latest in React, AI, and ethical hacking. I believe that every line of code should be clean, efficient, and, most importantly, secure.
+              Beyond traditional engineering, I am a continuous learner tracking the pulse of AI, modern web frameworks, and ethical hacking. I firmly believe that exceptional software isn't just about clean and efficient code—it must be computationally solid and secure by design from the ground up.
             </motion.p>
 
             <motion.div className="about-tags" variants={itemVariants}>

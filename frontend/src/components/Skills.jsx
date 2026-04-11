@@ -7,9 +7,9 @@ const skillGroups = [
     category: 'Frontend Development',
     icon: <Layout size={24} />,
     skills: [
-      { name: 'React.js / Next.js', level: 90 },
-      { name: 'JavaScript (ES6+)', level: 92 },
-      { name: 'Tailwind CSS / Sass', level: 85 },
+      { name: 'React.js / Next.js', level: 80 },
+      { name: 'JavaScript (ES6+)', level: 78 },
+      { name: 'Tailwind CSS / Sass', level: 80 },
       { name: 'HTML5 / CSS3', level: 95 },
     ],
   },
@@ -17,10 +17,10 @@ const skillGroups = [
     category: 'Backend & Database',
     icon: <Server size={24} />,
     skills: [
-      { name: 'Node.js / Express', level: 85 },
-      { name: 'MongoDB / MySQL', level: 82 },
-      { name: 'RESTful APIs', level: 88 },
-      { name: 'JWT Authentication', level: 85 },
+      { name: 'Node.js / Express', level: 81 },
+      { name: 'MongoDB / MySQL', level: 70 },
+      { name: 'RESTful APIs', level: 69 },
+      { name: 'JWT Authentication', level: 60 },
     ],
   },
   {
@@ -40,7 +40,7 @@ const skillGroups = [
       { name: 'Git / GitHub', level: 90 },
       { name: 'Vite / Webpack', level: 85 },
       { name: 'Docker / CI/CD', level: 65 },
-      { name: 'Postman', level: 90 },
+      { name: 'Postman', level: 86 },
     ],
   },
 ]
@@ -70,7 +70,7 @@ export default function Skills() {
     <section id="skills" className="skills-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">technical stack</span>
+          <span className="section-tag">technical skills</span>
           <h2 className="section-title">My Expertise</h2>
           <p className="section-subtitle">A comprehensive breakdown of my full-stack development and security proficiency.</p>
         </div>

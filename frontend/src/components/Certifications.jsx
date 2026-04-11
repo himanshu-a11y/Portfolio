@@ -15,28 +15,35 @@ const certifications = [
     issuer: 'Red Hat',
     date: '2024',
     icon: <Globe size={24} />,
-    link: '#'
+    link: 'https://www.credly.com/badges/4126d567-b5f5-4d65-8442-5589eed19c7c/public_url'
   },
   {
     title: 'Introduction to Cybersecurity',
     issuer: 'Cisco Networking Academy',
     date: '2024',
     icon: <ShieldCheck size={24} />,
-    link: '#'
+    link: 'https://www.credly.com/badges/b6b22c5f-606a-4ac4-a9f8-43d6175dba82/public_url'
   },
   {
     title: 'Governance, Risk, and Compliance',
     issuer: 'Coursera',
     date: '2025',
     icon: <Zap size={24} />,
-    link: '#'
+    link: 'https://coursera.org/verify/SKX19IELJ91A'
   },
   {
     title: 'Risk Management for Cyber Security Managers',
     issuer: 'Coursera',
     date: '2025',
     icon: <Code size={24} />,
-    link: '#'
+    link: 'https://coursera.org/verify/ZWOHMH5R815X'
+  },
+  {
+      title: 'Spark Fundamentals I',
+    issuer: 'IBM Developer Skills Network',
+    date: '2025',
+    icon: <Code size={24} />,
+    link: 'https://courses.cognitiveclass.ai/certificates/73178f0cfdcf440cbcaa4f7397f1ee8f'
   }
 ]
 

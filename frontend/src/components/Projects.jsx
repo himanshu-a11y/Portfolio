@@ -31,14 +31,14 @@ const projects = [
     category: 'Data Science',
     description: 'High-accuracy spam detection system utilizing NLP techniques and Scikit-learn classification algorithms.',
     tech: ['Python', 'Scikit-learn', 'NLP'],
-    github: 'https://github.com/himanshu-gurjar',
+    github: 'https://github.com/himanshu-a11y/Spam-Email-Detection',
     demo: '#',
     color: '217 91% 60%',
     icon: <Cpu size={32} />
   },
   {
     title: 'Beyond Grades',
-    category: 'Mobile App',
+    category: 'Full Stack',
     description: 'Soft skills evaluation system using bias-adjusted scoring and interactive data-driven performance insights.',
     status: 'Running',
     tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind','Express.js'],
@@ -49,7 +49,7 @@ const projects = [
   }
 ]
 
-const categories = ['All', 'Full Stack', 'Cybersecurity', 'Data Science', 'MERN Stack']
+const categories = ['All', 'Full Stack', 'Cybersecurity', 'Data Science']
 
 export default function Projects() {
   const [filter, setFilter] = useState('All')

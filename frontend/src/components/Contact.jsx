@@ -231,7 +231,7 @@ export default function Contact() {
         <footer className="footer">
           <div className="footer-content">
             <span className="footer-name">Himanshu Gurjar</span>
-            <p>Full Stack Developer • Cybersecurity Specialist</p>
+            <p>Full Stack Developer • Cybersecurity Enthusiast</p>
             <div className="footer-divider" />
             <p>© {new Date().getFullYear()} All Rights Reserved.</p>
           </div>
