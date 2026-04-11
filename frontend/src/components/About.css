@@ -81,6 +81,31 @@
   letter-spacing: -0.02em;
 }
 
+.about-info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: hsla(255, 255%, 255%, 0.02);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 8px;
+  color: hsl(var(--text-secondary));
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-item svg {
+  color: hsl(var(--accent-primary));
+  flex-shrink: 0;
+}
+
 .about-bio {
   color: hsl(var(--text-secondary));
   font-size: 1.15rem;

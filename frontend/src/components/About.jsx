@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Download, ChevronDown, User, FileText, Code, Award, Target, Zap } from 'lucide-react'
+import { Download, ChevronDown, User, FileText, Code, Award, Target, Zap, MapPin, GraduationCap } from 'lucide-react'
 import './About.css'
 
 const stats = [
@@ -92,38 +92,14 @@ export default function About() {
               ))}
             </motion.div>
 
-            <motion.div className="about-actions" variants={itemVariants}>
-              <a href="#contact" className="btn btn-primary">Get In Touch</a>
-              
-              <div className="cv-dropdown">
-                <button 
-                  className="btn btn-outline"
-                  onClick={() => setShowCVMenu(!showCVMenu)}
-                  aria-label="Download CV"
-                >
-                  <Download size={18} />
-                  Download CV
-                  <ChevronDown size={14} style={{ marginLeft: '4px' }} />
-                </button>
-                
-                <AnimatePresence>
-                  {showCVMenu && (
-                    <motion.div 
-                      className="cv-menu"
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <button onClick={() => handleDownload('pdf')} className="cv-menu-item">
-                        <FileText size={18} /> PDF Format
-                      </button>
-                      <button onClick={() => handleDownload('docx')} className="cv-menu-item">
-                        <Code size={18} /> Word (.docx)
-                      </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            <motion.div className="about-info" variants={itemVariants}>
+              <div className="info-item">
+                <MapPin size={16} />
+                <span>Jaipur, India</span>
+              </div>
+              <div className="info-item">
+                <GraduationCap size={16} />
+                <span>B.Tech CSE — JKLU</span>
               </div>
             </motion.div>
           </motion.div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Download, Mail, Terminal, Database, Shield } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Download, Mail, ChevronDown, FileText, Code } from 'lucide-react'
 import { Github, Linkedin } from './SocialIcons'
 import './Hero.css'
 
@@ -11,6 +11,12 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
+  const [showCVMenu, setShowCVMenu] = useState(false)
+
+  const handleDownload = (format) => {
+    window.location.href = `/api/download/cv/${format}`
+    setShowCVMenu(false)
+  }
 
   useEffect(() => {
     const handleType = () => {
@@ -64,10 +70,42 @@ export default function Hero() {
               <a href="#projects" className="btn btn-primary">
                 View My Work
               </a>
-              <a href="#contact" className="btn btn-secondary">
-                <Mail size={18} />
+              <a href="#contact" className="btn btn-outline">
                 Get In Touch
               </a>
+              
+              <div className="cv-dropdown">
+                <button 
+                  className="btn btn-outline cv-btn"
+                  onClick={() => setShowCVMenu(!showCVMenu)}
+                  aria-label="Download CV"
+                >
+                  <Download size={18} />
+                  Download CV
+                  <ChevronDown size={14} className="dropdown-icon" />
+                </button>
+                
+                <AnimatePresence>
+                  {showCVMenu && (
+                    <motion.div 
+                      className="cv-dropdown-menu"
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <button onClick={() => handleDownload('pdf')} className="dropdown-item">
+                        <FileText size={16} />
+                        <span>PDF</span>
+                      </button>
+                      <button onClick={() => handleDownload('docx')} className="dropdown-item">
+                        <Code size={16} />
+                        <span>Word</span>
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
 
             <div className="hero-socials">
