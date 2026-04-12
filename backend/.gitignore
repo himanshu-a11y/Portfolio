@@ -9,9 +9,6 @@ lerna-debug.log*
 
 # build directories
 node_modules/
-dist/
-dist-ssr/
-build/
 
 # Environment variables
 .env
