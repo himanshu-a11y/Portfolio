@@ -14,7 +14,8 @@ export default function Hero() {
   const [showCVMenu, setShowCVMenu] = useState(false)
 
   const handleDownload = (format) => {
-    window.location.href = `/api/download/cv/${format}`
+    const API_URL = import.meta.env.PROD ? (import.meta.env.VITE_API_URL || 'https://portfolio-s8ik.onrender.com') : '';
+    window.location.href = `${API_URL}/api/download/cv/${format}`
     setShowCVMenu(false)
   }
 

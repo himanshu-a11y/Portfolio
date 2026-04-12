@@ -41,7 +41,8 @@ export default function Contact() {
     setStatus({ type: '', message: '' })
 
     try {
-      const response = await fetch('/api/contact', {
+      const API_URL = import.meta.env.PROD ? (import.meta.env.VITE_API_URL || 'https://portfolio-s8ik.onrender.com') : '';
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
