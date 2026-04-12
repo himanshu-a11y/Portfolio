@@ -78,7 +78,6 @@ export default function Navbar() {
           </svg>
           <span className="logo-wordmark">
             <span className="logo-name">Himanshu</span>
-            <span className="logo-dot">.</span>
           </span>
         </a>
 

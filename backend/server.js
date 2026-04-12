@@ -12,10 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static assets if needed
-// app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// Database Connection
 let dbConnected = false;
 
 if (process.env.MONGODB_URI) {

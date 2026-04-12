@@ -10,6 +10,7 @@ import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import NetworkBackground from './components/NetworkBackground'
 import CursorSpotlight from './components/CursorSpotlight'
+import Loading from './components/Loading'
 
 function PortfolioHome() {
   return (
@@ -28,6 +29,7 @@ function PortfolioHome() {
 function App() {
   return (
     <Router>
+      <Loading />
       <CursorSpotlight />
       <NetworkBackground />
       <Navbar />

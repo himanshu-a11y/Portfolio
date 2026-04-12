@@ -109,10 +109,10 @@ export default function Hero() {
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com" className="social-link" title="GitHub">
+              <a href="https://github.com/himanshu-a11y" className="social-link" title="GitHub">
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com" className="social-link" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/himanshu-gurjar-02ab172aa/" className="social-link" title="LinkedIn">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:harsanahimanshu21@gmail.com" className="social-link" title="Email">
@@ -125,7 +125,9 @@ export default function Hero() {
             <div className="avatar-container">
               <div className="avatar-ring"></div>
               <div className="avatar-glow"></div>
-              <div className="avatar-main">HG</div>
+              <div className="avatar-main">
+                <img src="/assets/pic.jpeg" alt="Himanshu Gurjar" className="avatar-image" />
+              </div>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ const projects = [
     category: 'Full Stack',
     description: 'Soft skills evaluation system using bias-adjusted scoring and interactive data-driven performance insights.',
     status: 'Running',
-    tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind','Express.js'],
+    tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind','Express.js', 'Kotlin'],
     github: 'https://github.com/Spark-Beyond-Grades',
     demo: '#',
     color: '250 84% 64%',
@@ -99,12 +99,14 @@ export default function Projects() {
                 
                 <div className="project-body">
                   <div className="project-top">
-                    <span className="project-cat" style={{ color: `hsl(${p.color})` }}>{p.category}</span>
+                    <div className="project-cat-container">
+                      <span className="project-cat" style={{ color: `hsl(${p.color})` }}>{p.category}</span>
+                      {p.status && <span className="project-status">{p.status}</span>}
+                    </div>
                     <h3 className="project-title">{p.title}</h3>
                   </div>
                   
                   <p className="project-desc">{p.description}</p>
-                  {p.status && <span className="project-status">{p.status}</span>}
                   
                   <div className="project-tech">
                     {p.tech.map(t => (

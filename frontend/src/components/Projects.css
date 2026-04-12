@@ -77,13 +77,19 @@
   margin-bottom: 20px;
 }
 
+.project-cat-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
 .project-cat {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 8px;
-  display: block;
   opacity: 0.8;
 }
 
@@ -104,16 +110,16 @@
 
 .project-status {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   background: hsla(var(--accent-primary), 0.25);
   color: hsl(var(--accent-primary));
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 8px;
-  margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: 1px solid hsla(var(--accent-primary), 0.4);
+  white-space: nowrap;
 }
 
 .project-tech {

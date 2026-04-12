@@ -1,0 +1,119 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: hsl(var(--bg-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-out 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.loading-logo {
+  width: 120px;
+  height: 120px;
+  animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hex-outer {
+  animation: rotateHex 3s linear infinite;
+  transform-origin: center;
+}
+
+.hex-inner {
+  animation: rotateHexReverse 4s linear infinite;
+  transform-origin: center;
+}
+
+.hex-text {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotateHex {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateHexReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid hsla(var(--accent-primary), 0.2);
+  border-top-color: hsl(var(--accent-primary));
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 0.95rem;
+  color: hsl(var(--text-secondary));
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  animation: fadeInText 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
