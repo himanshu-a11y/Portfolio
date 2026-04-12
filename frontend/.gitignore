@@ -30,3 +30,7 @@ build/
 *.njsproj
 *.sln
 *.sw?
+
+# Assets
+src/assets/
+public/assets/
