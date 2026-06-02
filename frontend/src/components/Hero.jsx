@@ -12,11 +12,28 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
   const [showCVMenu, setShowCVMenu] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   const handleDownload = (format) => {
+    if (isDownloading) return;
+    setIsDownloading(true);
+
     const API_URL = import.meta.env.PROD ? (import.meta.env.VITE_API_URL || 'https://portfolio-s8ik.onrender.com') : '';
-    window.location.href = `${API_URL}/api/download/cv/${format}`
-    setShowCVMenu(false)
+    const url = `${API_URL}/api/download/cv/${format}`;
+    
+    // Create a temporary anchor tag for downloading to prevent window.location loop
+    const link = document.createElement('a');
+    link.href = url;
+    // Set the standard download property
+    link.setAttribute('download', `resume.${format}`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setShowCVMenu(false);
+    
+    // Prevent another click/download for 1.5 seconds
+    setTimeout(() => setIsDownloading(false), 1500); 
   }
 
   useEffect(() => {

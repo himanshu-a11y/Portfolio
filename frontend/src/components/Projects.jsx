@@ -1,10 +1,20 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Code, Terminal, Globe, Shield, Cpu, Database } from 'lucide-react'
+import { ExternalLink, Code, Terminal, Globe, Shield, Cpu, Database, Lock } from 'lucide-react'
 import { Github } from './SocialIcons'
 import './Projects.css'
 
 const projects = [
+  {
+    title: 'Threshold Cryptography Digital Vault',
+    category: 'Cybersecurity',
+    description: 'An enterprise-grade, mathematically secure digital vault leveraging Hybrid Cryptography (AES-256-GCM) and Feldman Verifiable Secret Sharing (VSS) to protect critical data.',
+    tech: ['Python', 'Flask', 'Cryptography', 'AES-256-GCM', 'Secret Sharing (SSS)', 'Feldman VSS', 'HTML5/CSS3/JS'],
+    github: 'https://github.com/himanshu-a11y/Threshold-Cryptography-Digital-Vault',
+    demo: 'https://threshold-cryptography-digital-vault.onrender.com/',
+    color: '270 85% 60%',
+    icon: <Lock size={32} />
+  },
   {
     title: 'Web Pentration Tool',
     category: 'Cybersecurity',
@@ -19,7 +29,6 @@ const projects = [
     title: 'SkillBridge (ITI Student Job Matching Portal)',
     category: 'Full Stack',
     description: 'SkillBridge is a MERN-based platform connecting ITI students with employers through skill-based job matching.',
-    status: 'Running',
     tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT Authentication', 'Redis (for caching)'],
     github: 'https://github.com/himanshu-a11y/Full-stack-Project',
     demo: '#',
@@ -40,7 +49,6 @@ const projects = [
     title: 'Beyond Grades',
     category: 'Full Stack',
     description: 'Soft skills evaluation system using bias-adjusted scoring and interactive data-driven performance insights.',
-    status: 'Running',
     tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind','Express.js', 'Kotlin'],
     github: 'https://github.com/Spark-Beyond-Grades',
     demo: '#',
