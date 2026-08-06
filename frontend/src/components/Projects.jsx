@@ -36,6 +36,16 @@ const projects = [
     icon: <Database size={32} />
   },
   {
+    title: 'Beyond Grades',
+    category: 'Full Stack',
+    description: 'Soft skills evaluation system using bias-adjusted scoring and interactive data-driven performance insights.',
+    tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind', 'Express.js', 'Kotlin'],
+    github: 'https://github.com/Spark-Beyond-Grades',
+    demo: '#',
+    color: '250 84% 64%',
+    icon: <Globe size={32} />
+  },
+  {
     title: 'Spam ML Classifier',
     category: 'Data Science',
     description: 'High-accuracy spam detection system utilizing NLP techniques and Scikit-learn classification algorithms.',
@@ -46,14 +56,14 @@ const projects = [
     icon: <Cpu size={32} />
   },
   {
-    title: 'Beyond Grades',
-    category: 'Full Stack',
-    description: 'Soft skills evaluation system using bias-adjusted scoring and interactive data-driven performance insights.',
-    tech: ['Next.js', 'MongoDB', 'Node.js', 'Tailwind','Express.js', 'Kotlin'],
-    github: 'https://github.com/Spark-Beyond-Grades',
+    title: 'DriveWise - Metadata-Aware Automotive RAG Assistant',
+    category: 'Data Science',
+    description: 'Retrieval-Augmented Generation (RAG) assistant that answers natural-language questions about a car using only that car\'s brochure content.',
+    tech: ['Python', 'sentence-transformers', 'FAISS', 'Hugging Face', 'Streamlit'],
+    github: 'https://github.com/himanshu-a11y/DriveWise-Metadata-Aware-Automotive-RAG-Assistant',
     demo: '#',
-    color: '250 84% 64%',
-    icon: <Globe size={32} />
+    color: '340 82% 62%',
+    icon: <Code size={32} />
   }
 ]
 
@@ -62,8 +72,8 @@ const categories = ['All', 'Full Stack', 'Cybersecurity', 'Data Science']
 export default function Projects() {
   const [filter, setFilter] = useState('All')
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(p => p.category === filter || p.tech.includes(filter))
 
   return (
@@ -77,8 +87,8 @@ export default function Projects() {
 
         <div className="project-filters">
           {categories.map(cat => (
-            <button 
-              key={cat} 
+            <button
+              key={cat}
               className={`filter-btn ${filter === cat ? 'active' : ''}`}
               onClick={() => setFilter(cat)}
             >
@@ -100,11 +110,11 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="project-header" style={{ background: `hsla(${p.color}, 0.15)` }}>
-                   <div className="project-icon" style={{ color: `hsl(${p.color})` }}>
+                  <div className="project-icon" style={{ color: `hsl(${p.color})` }}>
                     {p.icon}
-                   </div>
+                  </div>
                 </div>
-                
+
                 <div className="project-body">
                   <div className="project-top">
                     <div className="project-cat-container">
@@ -113,15 +123,15 @@ export default function Projects() {
                     </div>
                     <h3 className="project-title">{p.title}</h3>
                   </div>
-                  
+
                   <p className="project-desc">{p.description}</p>
-                  
+
                   <div className="project-tech">
                     {p.tech.map(t => (
                       <span key={t} className="tech-tag">{t}</span>
                     ))}
                   </div>
-                  
+
                   <div className="project-links">
                     <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
                       <Github size={18} /> GitHub

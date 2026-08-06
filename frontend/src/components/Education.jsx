@@ -14,6 +14,15 @@ const timelineData = [
   },
   {
     type: 'experience',
+    title: 'DriveWise — Metadata-Aware Automotive RAG Assistant',
+    subtitle: 'Data Science Intern',
+    institution: 'Celebal Technologies, Jaipur',
+    period: 'May 2026 – July 2026',
+    description: 'Worked with real-world datasets to perform data preprocessing, exploratory data analysis (EDA), feature engineering, and predictive modeling using Python. Developed and evaluated machine learning models.',
+    icon: <Briefcase size={22} />
+  },
+  {
+    type: 'experience',
     title: 'Password Strength Checker Web Application',
     subtitle: 'IoT Internship',
     institution: 'Jawaharlal Nehru University, New Delhi',
@@ -45,8 +54,8 @@ export default function Education() {
         <div className="vertical-timeline">
           <div className="timeline-line" />
           {timelineData.map((item, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -58,22 +67,22 @@ export default function Education() {
                   {item.icon}
                 </div>
               </div>
-              
+
               <div className="timeline-card glass-card">
                 <div className="timeline-header">
                   <span className="timeline-type-tag">{item.type}</span>
                   <span className="timeline-date"><Calendar size={14} /> {item.period}</span>
                 </div>
-                
+
                 <h3 className="timeline-title">{item.title}</h3>
                 <h4 className="timeline-subtitle">{item.subtitle}</h4>
-                
+
                 <p className="timeline-institution">
                   <MapPin size={14} /> {item.institution}
                 </p>
-                
+
                 <p className="timeline-desc">{item.description}</p>
-                
+
                 {index === 0 && (
                   <div className="timeline-highlight">
                     <Sparkles size={14} /> Currently Pursuing

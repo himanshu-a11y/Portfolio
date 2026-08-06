@@ -4,7 +4,7 @@
 
 ### Ultra-modern interactive MERN stack portfolio — React + Node.js + MongoDB + Framer Motion.
 
-**LIVE HOSTED ON:** [https://himanshugurjar.vercel.app](https://himanshugurjar.vercel.app)
+**LIVE HOSTED ON:** [https://himanshu-a11y.vercel.app](https://himanshu-a11y.vercel.app)
 
 ---
 
@@ -74,7 +74,7 @@ node server.js   # http://localhost:5000
 - ✅ **Animated loading screen** + custom interactions
 - ✅ **Contact form** integrated with MongoDB
 - ✅ **CV download** (PDF + DOCX) served from backend
-- ✅ .env security for sensitive data
+- ✅ **.env** security for sensitive data
 
 ---
 
