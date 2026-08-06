@@ -14,27 +14,7 @@ export default function Hero() {
   const [showCVMenu, setShowCVMenu] = useState(false)
   const [isDownloading, setIsDownloading] = useState(false)
 
-  const handleDownload = (format) => {
-    if (isDownloading) return;
-    setIsDownloading(true);
-
-    const API_URL = import.meta.env.PROD ? (import.meta.env.VITE_API_URL || 'https://portfolio-s8ik.onrender.com') : '';
-    const url = `${API_URL}/api/download/cv/${format}`;
-    
-    // Create a temporary anchor tag for downloading to prevent window.location loop
-    const link = document.createElement('a');
-    link.href = url;
-    // Set the standard download property
-    link.setAttribute('download', `resume.${format}`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    setShowCVMenu(false);
-    
-    // Prevent another click/download for 1.5 seconds
-    setTimeout(() => setIsDownloading(false), 1500); 
-  }
+  const API_URL = import.meta.env.PROD ? (import.meta.env.VITE_API_URL || 'https://portfolio-s8ik.onrender.com') : '';
 
   useEffect(() => {
     const handleType = () => {
@@ -112,14 +92,30 @@ export default function Hero() {
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.15 }}
                     >
-                      <button onClick={() => handleDownload('pdf')} className="dropdown-item">
+                      <a 
+                        href={`${API_URL}/api/download/cv/pdf`} 
+                        download="resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="dropdown-item"
+                        onClick={() => setShowCVMenu(false)}
+                        style={{ textDecoration: 'none' }}
+                      >
                         <FileText size={16} />
                         <span>PDF</span>
-                      </button>
-                      <button onClick={() => handleDownload('docx')} className="dropdown-item">
+                      </a>
+                      <a 
+                        href={`${API_URL}/api/download/cv/docx`} 
+                        download="resume.docx"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="dropdown-item"
+                        onClick={() => setShowCVMenu(false)}
+                        style={{ textDecoration: 'none' }}
+                      >
                         <Code size={16} />
                         <span>Word</span>
-                      </button>
+                      </a>
                     </motion.div>
                   )}
                 </AnimatePresence>
