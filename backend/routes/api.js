@@ -40,9 +40,9 @@ router.get('/download/cv/:format', (req, res) => {
   let fileName = '';
   
   if (format === 'pdf') {
-    fileName = 'resume.pdf';
+    fileName = 'Himanshu resume.pdf';
   } else if (format === 'docx') {
-    fileName = 'resume.docx';
+    fileName = 'Himanshu resume.docx';
   } else {
     return res.status(400).send('Invalid download format requested.');
   }
