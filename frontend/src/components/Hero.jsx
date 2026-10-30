@@ -61,7 +61,7 @@ export default function Hero() {
             </div>
 
             <p className="hero-desc">
-             Full-stack developer and cybersecurity enthusiast building secure, scalable applications. I code with precision and think like an attacker.
+            Full-stack developer with an attacker's mindset. I build secure web applications and test them for real weaknesses, focusing on penetration testing, OSINT and network security. Top 7% on TryHackMe.
             </p>
 
             <div className="hero-actions">
